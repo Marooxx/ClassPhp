@@ -120,6 +120,9 @@
     ** Instace = new de la class (Nous affectons les variables et les fonctions public à notre varible)
     ** Pour faire appelle à une variablze ou un fonction, nous "Aiguillons" grace à une "->" vers la ressource(les variables et les fonctions)
     */
+    
+    /*
     $mydb = new Crud("localhost", "root", "", "projetapp");
     $data = array("name"=>"politics", "slug"=>"politics", "image"=>"test.jpg");
     $mydb->create($data, "categorie");
+    */
