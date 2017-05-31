@@ -81,6 +81,8 @@ class humain
 			
 		}
 
+		// GETTER = AFFICHER
+
 		public function getNom()
 		{
 			echo"Nom : ".$this->nom."<br>";
