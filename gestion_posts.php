@@ -24,17 +24,20 @@ class Post extends Crud
 		// avec parent::__construct($newHost, $newUser, $newPassword, $newDatabase) on se connecte à la BDD avec crudd et au fonctionnalité de construct de crudd. Pour se connecter à une fonction parent , il faut qu'elle porte le même nom que la nouvelle
 	$this->table="posts";
 	if($id!=null)
+
 		{
-		$this->read(array("*"),$this->table,array(id=>$id));
-		$this->id= $data['$id'];
-		$this->title=$data ['$title'];
-		$this->picture=$data ['$picture'];
-		$this->share=$data ['$shares'];
-		$this->comment=$data ['$comments'];
-		$this->likes=$data ['$likes'];
-		$this->liked=$data ['$liked'];
-		$this->description=$data ['$description'];
-		$this->date_create=$data ['$date_create'];
+		
+		$data=$this->read(array("*"),$this->table,array("id"=>$id));
+		$this->read(array("*"),$this->table,array("id"=>$id));
+		$this->id= $data[0]['id'];
+		$this->title=$data[0]['title'];
+		$this->picture=$data[0]['picture'];
+		$this->share=$data[0]['share'];
+		$this->comment=$data[0]['comment'];
+		$this->likes=$data[0]['likes'];
+		$this->liked=$data[0]['liked'];
+		$this->description=$data[0]['description'];
+		$this->date_create=$data[0]['date_create'];
 		
 
 		}
