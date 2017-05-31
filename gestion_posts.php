@@ -2,7 +2,7 @@
 require "crudd.php";
 
 
-class Post extends Crud()
+class Post extends Crud
 {
 	public $id;
 	public $title;
@@ -43,23 +43,23 @@ class Post extends Crud()
 
 	public function updateShares()
 		{
-			$this->replace(array("share"=>$this->share+1),$this->table,array("id"=>$this->id);
+			$this->replace(array("share"=>$this->share+1),$this->table,array("id"=>$this->id));
 		}
 	
 	public function updateComment()
 		{
-			$this->replace(array("comment"=>$this->comment+1),$this->table,array("id"=>$this->id);
+			$this->replace(array("comment"=>$this->comment+1),$this->table,array("id"=>$this->id));
 		}
 	
 	
 	public function updateLike()
 		{
-			$this->replace(array("likes"=>0),$this->table,array("id"=>$this->id);
+			$this->replace(array("likes"=>0),$this->table,array("id"=>$this->id));
 		}
 	
 	public function updateLiked()
 		{
-			$this->replace(array("liked"=>0),$this->table,array("id"=>$this->id);
+			$this->replace(array("liked"=>0),$this->table,array("id"=>$this->id));
 		}
 
 

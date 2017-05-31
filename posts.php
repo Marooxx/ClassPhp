@@ -1,6 +1,6 @@
 <?php
-  require"crudd.php";// on met le require au dessus pour recuperer les categories
-  $mydb = new Crud("localhost", "root", "", "projetapp");
+  require"gestion_posts.php";// on met le require au dessus pour recuperer les categories
+  $mydb = new Post("localhost", "root", "", "projetapp");
 ?>
 
 <html>
