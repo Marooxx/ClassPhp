@@ -46,7 +46,7 @@
 
 ?>
 <!-- FORMULAIRE MODIFIER-->
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" id="form_modif_post" method="post">
 <fieldset>
 
 <!-- Form Name -->
@@ -117,7 +117,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="">Valider</label>
   <div class="col-md-4">
-    <button type="submit" id="" name="" class="btn btn-primary">Envoyez</button>
+    <button type="submit" id="modif_button" name="" class="btn btn-primary">Envoyez</button>
   </div>
 </div>
 
