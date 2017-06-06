@@ -58,7 +58,6 @@ $(function()// fonction à mettre à chaque fois que l'on commence du jquery
         });
     });
 
-});
   /* Autre solution : $('#modif_button').on("click", function() 
 						{
 							event.preventDefault();
@@ -67,9 +66,22 @@ $(function()// fonction à mettre à chaque fois que l'on commence du jquery
 						});
 							*/
 
-				
+	$("#form_sup_post").submit(function(e) {
+	        e.preventDefault();
+	        console.log(idSelect);
+	        $.ajax({
+	            url: "api.php",
+	            method: "POST",
+	            data: {
+	                id_post: idSelect,
+	                type: "Delete"
+	               
+	            }
+	        });
+	    });				
 				
 
+});
 		
 
 //document.ready 

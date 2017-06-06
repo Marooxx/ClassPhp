@@ -38,7 +38,7 @@ class Post extends Crud
 		$this->liked=$data[0]['liked'];
 		$this->description=$data[0]['description'];
 		$this->date_create=$data[0]['date_create'];
-		
+		var_dump($data);
 
 		}
 

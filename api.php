@@ -4,6 +4,7 @@ require'crudd.php';
 $mydb = new Crud("localhost","root","","projetapp");// création de l'instance $mydb
 
 
+
 if(empty ($_POST))
 	{
 		$post=$mydb->read(array('*'),"posts",array("1"=>"1"));	
@@ -11,14 +12,29 @@ if(empty ($_POST))
 else
 	{	
 		if($_POST['type'] == "Select")
-		$post=$mydb->read(array('*'),"posts",array("id"=>$_POST['id_post']));		
- elseif($_POST["type"] == "Update"){
+		{
+			$post=$mydb->read(array('*'),"posts",array("id"=>$_POST['id_post']));
+		}		
+ 			
+ 			elseif($_POST["type"] == "Update")
+ 				{
             unset($_POST["type"]);
             $id = $_POST["id_post"];
             unset($_POST["id_post"]);
             $post = $mydb->update( $_POST, "posts", array("id"=>$id));
-        }
-    }
+            	}
+
+            
+            elseif($_POST["type"] == "Delete")
+ 				{
+            	$id= $_POST['id_post'];// on récupère l'id du post pour savoir qu'elle id est à supprimer
+            	$_POST = $mydb->delete('posts',array("id"=>$id));
+
+
+           		 }
+       		
+   		 }
+   		
       
 echo json_encode($post);
 

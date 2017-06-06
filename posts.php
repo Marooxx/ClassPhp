@@ -45,6 +45,50 @@
     }
 
 ?>
+<!-- FORMULAIRE SUPPRIMER-->
+
+<form class="form-horizontal" id="form_sup_post" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend >Supprimer posts</legend>
+ <div >
+    <select  id="id" name="id" class="form-control">
+    <option value="null">Selectionner un post</option>
+    <?php
+    $category = $mydb->read(array("id","title"),"posts",array("1"=>"1"));// on crée une condition tjs vraie car on a besoin d'une condition
+    foreach($category as $key=>$value)
+    echo '<option value="    '.$value["id"].'      ">   '.$value["title"].'     </option>';
+    
+                 
+
+
+    ?>
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+    </select>
+  </div><br>
+
+
+
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Valider</label>
+  <div class="col-md-4">
+    <button type="submit" id="modif_button" name="" class="btn btn-primary">Envoyez</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+
+
 <!-- FORMULAIRE MODIFIER-->
 <form class="form-horizontal" id="form_modif_post" method="post">
 <fieldset>
@@ -128,6 +172,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <!-- FORMULAIRE Ajouter-->
 
 <form class="form-horizontal" method="post">
@@ -199,3 +252,5 @@
  
 </body>
 </html>
+
+
